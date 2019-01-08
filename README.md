@@ -1,4 +1,4 @@
 ## Xmonad config.
 
 ### Installation:
-* notes/install.md
+* [install](https://github.com/sashmlv/xwm-config/blob/master/notes/install.md)
