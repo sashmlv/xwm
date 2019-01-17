@@ -1,7 +1,9 @@
--- minimal Ubuntu config file: ~/.xmonad/xmonad.hs
+-- minimal Ubuntu config file with Xmobar: ~/.xmonad/xmonad.hs
 import XMonad
- 
-main = xmonad def
-  { modMask     = mod4Mask -- set 'Mod' to windows key
-  , terminal    = "gnome-terminal" -- for Mod + Shift + Enter
-  }
+import XMonad.Hooks.DynamicLog (xmobar)
+
+main = do
+  xmonad $ defaultConfig {
+    modMask       = mod4Mask         -- set 'Mod' to windows key
+    , terminal    = "gnome-terminal" -- for Mod + Shift + Enter
+    }
