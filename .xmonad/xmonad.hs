@@ -1,9 +1,12 @@
--- minimal Ubuntu config file with Xmobar: ~/.xmonad/xmonad.hs
 import XMonad
-import XMonad.Hooks.DynamicLog (xmobar)
+import XMonad.Config.Desktop
+import XMonad.Wallpaper
 
 main = do
+  setRandomWallpaper [ "$HOME/Pictures" ]
   xmonad $ defaultConfig {
-    modMask       = mod4Mask         -- set 'Mod' to windows key
-    , terminal    = "gnome-terminal" -- for Mod + Shift + Enter
+    modMask              = mod4Mask         -- set 'Mod' to windows key
+    , terminal           = "gnome-terminal" -- for Mod + Shift + Enter
+    , borderWidth        = 1
+    , focusedBorderColor = "#00FF00"
     }

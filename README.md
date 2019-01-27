@@ -25,5 +25,6 @@ export PATH=$PATH":/home/user/.cabal/bin"
 export PATH=$PATH":/home/user/.xmonad"
 ```
 * copy directory ```.xmonad``` into ```$HOME```
+* install libs from notes/install.md
 * run: ```xmonad --recompile```
 * reboot and choose xmonad session at login page
