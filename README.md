@@ -12,7 +12,7 @@ required libraries: ```sudo apt install ghc libx11-dev libxinerama-dev libxext-d
 Encoding=UTF-8
 Name=XMonad
 Comment=Lightweight tiling window manager
-Exec=xmonad
+Exec=/home/user/.xmonad/xmonad-run.sh
 Icon=xmonad.png
 Type=XSession
 ```
