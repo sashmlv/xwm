@@ -1,4 +1,3 @@
 ### Libs installation:
-* ```sudo apt install feh libmagic-dev```
-* ```cabal install xmonad-wallpaper```
+* ```sudo apt install libcurl4-openssl-dev libx11-dev libxt-dev libimlib2-dev libxinerama-dev libjpeg-progs feh```
 
