@@ -2,7 +2,7 @@
 
 compton -b # transparency
 # xcompmgr -n # transparency
-feh --bg-scale /usr/share/backgrounds/wallpaper.jpg # wallpaper
+feh --bg-fill ~/Pictures/wallpaper.jpg # wallpaper
 
 if [ -s ~/.xmonad/.xmodmap ]; then
     xmodmap initialize
@@ -10,7 +10,7 @@ if [ -s ~/.xmonad/.xmodmap ]; then
 fi
 
 if [ -s ~/.xmonad/.xmobarrc ]; then
-    xmobar ~/.xmonad/.xmobarrc
+    xmobar ~/.xmonad/.xmobarrc &
 fi
 
 xmonad
