@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-copmton -b # transparency
+compton -b # transparency
+# xcompmgr -n # transparency
 feh --bg-scale /usr/share/backgrounds/wallpaper.jpg # wallpaper
 
-# xmodmap initialize
+xmodmap initialize
 if [ -s ~/.xmonad/.xmodmap ]; then
     xmodmap ~/.xmonad/.xmodmap
 fi
