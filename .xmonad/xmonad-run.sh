@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 compton -b # transparency
-# xcompmgr -n # transparency
+# xcompmgr -n & # transparency
 feh --bg-fill ~/Pictures/wallpaper.jpg # wallpaper
 
 if [ -s ~/.xmonad/.xmodmap ]; then

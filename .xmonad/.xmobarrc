@@ -8,13 +8,13 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , position = Top
        , textOffset = -1
        , iconOffset = -1
-       , lowerOnStart = True
+       , lowerOnStart = False
        , pickBroadest = False
-       , persistent = False
+       , persistent = True
        , hideOnStart = False
        , iconRoot = "."
        , allDesktops = True
-       , overrideRedirect = True
+       , overrideRedirect = False
        , commands = [ Run Network "eth0" ["-L","0","-H","32",
                                           "--normal","green","--high","red"] 10
                     , Run Network "eth1" ["-L","0","-H","32",
