@@ -19,4 +19,8 @@ if [ -s ~/.xmonad/.xmobarrc ]; then
     xmobar ~/.xmonad/.xmobarrc &
 fi
 
+if [ -s ~/.xmonad/.xresources ]; then
+    xrdb -merge -I$HOME ~/.xmonad/.xresources
+fi
+
 xmonad
