@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
-compton -b # transparency
-# xcompmgr -n & # transparency
-feh --bg-fill ~/Pictures/wallpaper.jpg # wallpaper
+# transparency
+compton -b
+# xcompmgr -n &
+
+# wallpaper
+feh --bg-fill ~/Pictures/wallpaper.jpg
+
+# keyboard layout switcher
+setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'
 
 if [ -s ~/.xmonad/.xmodmap ]; then
     xmodmap initialize
