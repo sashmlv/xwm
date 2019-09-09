@@ -52,7 +52,7 @@ exec stack ghc -- \
 * Transparency support: ```sudo apt install compton``` or ```xcompmgr``` and update: ```xmonad-run.sh``` accordingly
 * Screenshot utility: ```sudo apt install flameshot```
 * If ```xrdb``` utility is not installed, try install X-server utils: ```sudo apt install x11-xserver-utils```
-* For volume control, the amixer and pactl apps maybe preinstalled, if doesn’t: ```sudo apt install pulseaudio-utils pavucontrol```
+* For volume control, the ```amixer``` and ```pactl``` apps maybe preinstalled, if doesn’t: ```sudo apt install pulseaudio-utils pavucontrol```
 * We want choose xmonad at login page: ```sudo nano /usr/share/xsessions/xmonad.desktop```
 ```
 [Desktop Entry]
