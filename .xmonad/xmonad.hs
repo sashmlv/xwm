@@ -4,6 +4,7 @@ import XMonad.Util.Run
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Util.EZConfig
+import Graphics.X11.ExtraTypes.XF86
 
 main = do
   xmonad $ docks $ defaultConfig {
@@ -19,5 +20,13 @@ main = do
         ]
     , layoutHook         = avoidStruts  $  layoutHook defaultConfig -- fix xmobar overlap
     }
-    `additionalKeys`
-    [ ((mod4Mask, xK_b), sendMessage ToggleStruts) ]
+    `additionalKeysP`
+    [
+      ("M-b", sendMessage ToggleStruts)
+    , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
+    , ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
+    , ("M-<Backspace>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    , ("M--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
+    , ("M-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
+    ]
