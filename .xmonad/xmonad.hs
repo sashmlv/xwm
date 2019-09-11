@@ -29,4 +29,5 @@ main = do
     , ("M-<Backspace>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ("M--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -2%")
     , ("M-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
+    , ("<Print>", spawn "flameshot gui")
     ]
