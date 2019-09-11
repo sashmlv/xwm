@@ -1,11 +1,11 @@
-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { font = "xft:DejaVu Sans Mono:size=7:antialias=true"
        , additionalFonts = []
        , borderColor = "black"
        , border = TopB
        , bgColor = "black"
-       , fgColor = "grey"
+       , fgColor = "white"
        , alpha = 255
-       , position = Top
+       , position = Bottom
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = False
@@ -18,12 +18,12 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
-                    , Run Date "%d.%m.%y %H:%M" "date" 10
+                    , Run Date "%H:%M %d.%m.%y" "date" 10
                     , Run Kbd [("ru", "RU"), ("us", "US")]
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %cpu% %memory% %swap% }\
-                    \{ %date%\
-                    \ %kbd% "
+       , template = " %kbd% %date% %cpu% %memory% %swap% }\
+                    \{\
+                    \"
        }
