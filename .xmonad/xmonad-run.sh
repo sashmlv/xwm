@@ -8,7 +8,7 @@ compton -b
 feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # keyboard layout switcher
-setxkbmap -layout us,ru -option 'grp:alt_space_toggle'
+setxkbmap -layout us,ru -option 'grp:shifts_toggle'
 
 if [ -s ~/.xmonad/.xmodmap ]; then
     xmodmap initialize
