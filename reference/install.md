@@ -48,11 +48,13 @@ exec stack ghc -- \
 * Copy config: ```cp -R xwm-config/.xmonad ./```
 * ```cd ~/.xmonad```
 * Make file executable: ```sudo chmod +x ./xmonad-run.sh```
+* Install font ```Office Code Pro``` or replace font in configs and install your
 * Install libraries, for wallpaper support: ```sudo apt install libcurl4-openssl-dev libx11-dev libxt-dev libimlib2-dev libxinerama-dev libjpeg-progs feh```
 * Transparency support: ```sudo apt install compton``` or ```xcompmgr``` and update: ```xmonad-run.sh``` accordingly
 * Screenshot utility: ```sudo apt install flameshot```
 * If ```xrdb``` utility is not installed, try install X-server utils: ```sudo apt install x11-xserver-utils```
 * For volume control, the ```amixer``` and ```pactl``` apps maybe preinstalled, if doesn’t: ```sudo apt install pulseaudio-utils pavucontrol```
+* Dmenu: ```sudo apt install suckless-tools```
 * We want choose xmonad at login page: ```sudo nano /usr/share/xsessions/xmonad.desktop```
 ```
 [Desktop Entry]

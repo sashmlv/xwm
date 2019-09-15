@@ -23,11 +23,15 @@ main = do
     `additionalKeysP`
     [
       ("M-b", sendMessage ToggleStruts)
+
     , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -2%")
     , ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
     , ("M-<Backspace>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ("M--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -2%")
     , ("M-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
+
     , ("<Print>", spawn "flameshot gui")
+
+    , ("M-p", spawn "dmenu_run -b -fn ' Office Code Pro-9' -l 12 -sb '#0F0' -sf '#000' -nb '#000' -nf '#FFF'")
     ]
