@@ -1,11 +1,10 @@
 Config {
-         font = "xft:Office Code Pro:size=9"
-       , additionalFonts = []
-       , borderColor = "black"
-       , border = TopB
-       , bgColor = "black"
+         font = "xft:Office Code Pro:antialias=true:size=8"
+       , additionalFonts = [
+           "xft:Office Code Pro:antialias=true:size=8:bold"
+           ]
        , fgColor = "white"
-       , alpha = 255
+       , alpha = 120
        , position = Bottom
        , textOffset = -1
        , iconOffset = -1
@@ -20,12 +19,12 @@ Config {
                     Run Cpu ["-L","3","-H","50","--normal","green","--high","red","--template","Cpu: <total>%"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
-                    , Run Date "%H:%M %d.%m.%y" "date" 10
-                    , Run Kbd [("ru", "RU"), ("us", "US")]
+                    , Run Date "<fn=1>%H:%M</fn> %d.%m.%y" "date" 10
+                    , Run Kbd [("ru", "<fn=1><fc=#FF00FF>RU</fc></fn>"), ("us", "<fn=1><fc=#00CCFF>EN</fc></fn>")]
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %kbd% %date% %cpu% %memory% %swap% }\
+       , template = " %kbd% %date% <fc=#9F9F9F>%cpu% %memory% %swap%</fc> }\
                     \{\
                     \"
        }

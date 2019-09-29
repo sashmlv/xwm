@@ -5,7 +5,7 @@ compton -b
 # xcompmgr -n &
 
 # wallpaper
-feh --bg-fill ~/Pictures/wallpaper.jpg
+feh --bg-fill ~/Pictures/Wallpapers/Wallpaper.jpg
 
 # keyboard layout switcher
 setxkbmap -layout us,ru -option 'grp:shifts_toggle'

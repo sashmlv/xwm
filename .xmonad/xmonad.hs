@@ -12,6 +12,7 @@ main = do
     , terminal           = "gnome-terminal" -- for Mod + Shift + Enter
     , borderWidth        = 0
     , focusedBorderColor = "#00FF00"
+    , focusFollowsMouse  = False
     , manageHook         = composeAll [
         manageDocks
         , isFullscreen --> doFullFloat
@@ -33,5 +34,5 @@ main = do
 
     , ("<Print>", spawn "flameshot gui")
 
-    , ("M-p", spawn "dmenu_run -b -fn ' Office Code Pro-9' -l 12 -sb '#0F0' -sf '#000' -nb '#000' -nf '#FFF'")
+    , ("M-p", spawn "dmenu_run -b -fn ' Office Code Pro-9' -l 12 -sb '#9900EF' -sf '#FFF' -nb '#000' -nf '#FFF'")
     ]
