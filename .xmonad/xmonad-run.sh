@@ -25,6 +25,6 @@ fi
 
 # mount disks
 # use this command for disk search: lsblk -f
-udisksctl mount -b /dev/sdb1
+# udisksctl mount -b /dev/sdb1
 
 xmonad
