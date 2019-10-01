@@ -23,4 +23,8 @@ if [ -s ~/.xmonad/.xresources ]; then
     xrdb -merge -I$HOME ~/.xmonad/.xresources
 fi
 
+# mount disks
+# use this command for disk search: lsblk -f
+udisksctl mount -b /dev/sdb1
+
 xmonad
