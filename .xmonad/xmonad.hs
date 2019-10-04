@@ -6,7 +6,6 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Util.EZConfig
 import Graphics.X11.ExtraTypes.XF86
 import XMonad.Actions.CycleWS
--- import XMonad.Actions.CycleRecentWS
 
 main = do
   xmonad $ docks $ defaultConfig {
@@ -28,11 +27,11 @@ main = do
       ("M-b", sendMessage ToggleStruts)
 
     , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -2%")
-    , ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
+    , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
+    , ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%")
     , ("M-<Backspace>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    , ("M--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -2%")
-    , ("M-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
+    , ("M--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
+    , ("M-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%")
 
     , ("<Print>", spawn "flameshot gui")
 
@@ -42,6 +41,4 @@ main = do
     , ("M-.", nextWS)
     , ("M-,", prevWS)
     , ("M-/", toggleWS)
-    -- CycleRecentWS точка
-    -- , ("M-/", cycleRecentWS [xK_Super_L] xK_comma xK_period)
     ]
