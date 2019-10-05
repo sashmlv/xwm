@@ -24,8 +24,10 @@ main = do
         , manageHook defaultConfig
         ]
     , layoutHook         = avoidStruts $ layoutHook defaultConfig -- fix xmobar overlap
-    -- , logHook            = dynamicLog
-    , logHook = dynamicLogWithPP $ defaultPP { ppOutput = hPutStrLn h }
+    , logHook = dynamicLogWithPP $ xmobarPP {
+        ppTitle    = \x -> ""
+        , ppOutput = hPutStrLn h
+        }
     }
     `additionalKeysP`
     [
