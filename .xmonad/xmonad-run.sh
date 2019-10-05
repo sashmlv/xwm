@@ -15,10 +15,6 @@ if [ -s ~/.xmonad/.xmodmap ]; then
     xmodmap ~/.xmonad/.xmodmap
 fi
 
-if [ -s ~/.xmonad/.xmobarrc ]; then
-    xmobar ~/.xmonad/.xmobarrc &
-fi
-
 if [ -s ~/.xmonad/.xresources ]; then
     xrdb -merge -I$HOME ~/.xmonad/.xresources
 fi

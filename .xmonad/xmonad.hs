@@ -6,8 +6,11 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Util.EZConfig
 import Graphics.X11.ExtraTypes.XF86
 import XMonad.Actions.CycleWS
+import XMonad.Hooks.DynamicLog
 
 main = do
+  -- xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
+  h <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
   xmonad $ docks $ defaultConfig {
     modMask              = mod4Mask         -- set 'Mod' to windows key
     , terminal           = "gnome-terminal" -- for Mod + Shift + Enter
@@ -20,7 +23,9 @@ main = do
           -- className =? "vlc" --> doFloat,
         , manageHook defaultConfig
         ]
-    , layoutHook         = avoidStruts  $  layoutHook defaultConfig -- fix xmobar overlap
+    , layoutHook         = avoidStruts $ layoutHook defaultConfig -- fix xmobar overlap
+    -- , logHook            = dynamicLog
+    , logHook = dynamicLogWithPP $ defaultPP { ppOutput = hPutStrLn h }
     }
     `additionalKeysP`
     [

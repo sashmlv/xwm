@@ -22,10 +22,11 @@ Config {
                     , Run Date "<fn=1>%H:%M</fn> %d.%m.%y" "date" 10
                     , Run Kbd [("ru", "<fn=1><fc=#FF00FF>RU</fc></fn>"), ("us", "<fn=1><fc=#00CCFF>EN</fc></fn>")]
                     , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=1> • </fn>", "-o", "<fn=1> • </fn>"] 1
+                    , Run StdinReader
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
        , template = " %kbd% %date% <fc=#9F9F9F>%cpu% %memory% %swap%</fc>}\
-                    \{%default:Master%\
+                    \{<fc=#BFBFBF>%StdinReader%</fc> %default:Master%\
                     \"
        }
