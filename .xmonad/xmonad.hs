@@ -9,8 +9,30 @@ import XMonad.Actions.CycleWS
 import XMonad.Hooks.DynamicLog
 
 main = do
+
   -- xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
   h <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
+
+  -- keyboard layout switcher
+  spawn "setxkbmap -layout us,ru -option 'grp:shifts_toggle'"
+  spawn "xmodmap initialize"
+  spawn "xmodmap ~/.xmonad/.xmodmap"
+
+  -- transparency
+  spawn "compton -b"
+  -- xcompmgr -n &
+
+  -- wallpaper
+  spawn "feh --bg-fill ~/Pictures/Wallpapers/Wallpaper.jpg"
+
+  -- xresources
+  spawn "xrdb -merge -I$HOME ~/.xmonad/.xresources"
+
+  -- mount disks
+  -- use this command for disk search: lsblk -f
+  spawn "udisksctl mount -b /dev/sdb1"
+  spawn "udisksctl mount -b /dev/sdc1"
+
   xmonad $ docks $ defaultConfig {
     modMask              = mod4Mask         -- set 'Mod' to windows key
     , terminal           = "gnome-terminal" -- for Mod + Shift + Enter
