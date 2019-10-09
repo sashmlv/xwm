@@ -14,8 +14,7 @@ main = do
   h <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
 
   -- keyboard layout switcher
-  spawn "setxkbmap -layout us,ru -option 'grp:shifts_toggle'"
-  spawn "setxkbmap -option ctrl:nocaps"
+  spawn "setxkbmap -layout us,ru -option 'grp:shifts_toggle,ctrl:nocaps'"
 
   -- transparency
   spawn "compton -b"
