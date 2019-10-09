@@ -15,8 +15,7 @@ main = do
 
   -- keyboard layout switcher
   spawn "setxkbmap -layout us,ru -option 'grp:shifts_toggle'"
-  spawn "xmodmap initialize"
-  spawn "xmodmap ~/.xmonad/.xmodmap"
+  spawn "setxkbmap -option ctrl:swapcaps"
 
   -- transparency
   spawn "compton -b"
