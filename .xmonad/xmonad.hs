@@ -15,7 +15,7 @@ main = do
 
   -- keyboard layout switcher
   spawn "setxkbmap -layout us,ru -option 'grp:shifts_toggle'"
-  spawn "setxkbmap -option ctrl:swapcaps"
+  spawn "setxkbmap -option ctrl:nocaps"
 
   -- transparency
   spawn "compton -b"
