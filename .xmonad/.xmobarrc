@@ -2,11 +2,13 @@ Config {
          font = "xft:Office Code Pro:antialias=true:size=9"
        , additionalFonts = [
                            "xft:Office Code Pro:antialias=true:size=9:bold"
+                           , "xft:Sans Serif-15:normal"
                            ]
        , fgColor = "white"
        , alpha = 120
-       , position = BottomSize C 100 25
+       , position = BottomSize C 100 30
        , textOffset = -1
+       , textOffsets = [ -1, 21 ]
        , iconOffset = -1
        , lowerOnStart = False
        , pickBroadest = False
@@ -22,12 +24,12 @@ Config {
                     , Run Date "<fn=1>%H:%M:%S</fn>" "time" 10
                     , Run Date "%d.%m.%y" "date" 10
                     , Run Kbd [("ru", "<fn=1><fc=#FF00FF>RU</fc></fn>"), ("us", "<fn=1><fc=#00CCFF>EN</fc></fn>")]
-                    , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=1> • </fn>", "-o", "<fn=1> • </fn>"] 1
+                    , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=2> • </fn>", "-o", "<fn=2> • </fn>"] 1
                     , Run StdinReader
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = " %kbd% <fc=#BFBFBF>%StdinReader%</fc>} %time% \
+       , template = "%kbd% <fc=#BFBFBF>%StdinReader%</fc>} %time% \
                     \{<fc=#9F9F9F>%cpu% %memory% %swap%</fc> %date% %default:Master%\
                     \"
        }
