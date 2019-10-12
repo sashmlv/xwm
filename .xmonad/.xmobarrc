@@ -1,14 +1,15 @@
 Config {
          font = "xft:Office Code Pro:antialias=true:size=9"
        , additionalFonts = [
-                           "xft:Office Code Pro:antialias=true:size=9:bold"
-                           , "xft:Sans Serif-15:normal"
+                            "xft:Sans Serif-15:normal"
+                           , "xft:Office Code Pro:antialias=true:size=9:bold"
+                           , "xft:Office Code Pro:antialias=true:size=10:bold"
                            ]
        , fgColor = "white"
        , alpha = 120
        , position = BottomSize C 100 30
        , textOffset = -1
-       , textOffsets = [ -1, 21 ]
+       , textOffsets = [ 21, -1 ]
        , iconOffset = -1
        , lowerOnStart = False
        , pickBroadest = False
@@ -18,18 +19,28 @@ Config {
        , allDesktops = True
        , overrideRedirect = False
        , commands = [
-                    Run Cpu ["-L","3","-H","50","--normal","green","--high","red","--template","Cpu: <total>%"] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Swap [] 10
-                    , Run Date "<fn=1>%H:%M:%S</fn>" "time" 10
+                    Run Cpu ["-L","3","-H","50","--normal","green","--high","red","-t","<total>"] 10
+                    , Run Memory ["-t","<usedratio>"] 10
+                    , Run Swap ["-t", "<usedratio>"] 10
+                    , Run Date "%H:%M:%S" "time" 10
                     , Run Date "%d.%m.%y" "date" 10
-                    , Run Kbd [("ru", "<fn=1><fc=#FF00FF>RU</fc></fn>"), ("us", "<fn=1><fc=#00CCFF>EN</fc></fn>")]
-                    , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=2> • </fn>", "-o", "<fn=2> • </fn>"] 1
+                    , Run Kbd [("ru", "<fc=#FF00FF>RU</fc>"), ("us", "<fc=#00CCFF>EN</fc>")]
+                    , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=1> • </fn>", "-o", "<fn=1> • </fn>"] 1
                     , Run StdinReader
                     ]
-       , sepChar  = "%"
+       , sepChar  = "_"
        , alignSep = "}{"
-       , template = "%kbd% <fc=#BFBFBF>%StdinReader%</fc>} %time% \
-                    \{<fc=#9F9F9F>%cpu% %memory% %swap%</fc> %date% %default:Master%\
+       , template = "<fn=2>_kbd_</fn> \
+                    \<fc=#BFBFBF>_StdinReader_</fc>\
+                    \}<fn=3>_time_</fn>\
+                    \{<fc=#9F9F9F>Cpu:</fc> _cpu_<fc=#9F9F9F>%</fc> \
+                    \<fc=#9F9F9F>Mem:</fc> _memory_<fc=#9F9F9F>%</fc> \
+                    \<fc=#9F9F9F>Swap:</fc> _swap_<fc=#9F9F9F>%</fc> \
+                    \_date_ \
+                    \<fn=2>_default:Master_</fn>\
                     \"
        }
+
+
+
+

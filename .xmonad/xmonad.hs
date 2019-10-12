@@ -46,8 +46,10 @@ main = do
         ]
     , layoutHook         = avoidStruts $ layoutHook defaultConfig -- fix xmobar overlap
     , logHook = dynamicLogWithPP $ xmobarPP {
-        ppTitle    = \x -> ""
-        , ppOutput = hPutStrLn h
+        ppTitle     = \x -> ""
+        , ppCurrent = wrap "<fn=2>" "</fn>" . xmobarColor "white" "black"
+        , ppLayout  = const "" -- to disable the layout info on xmobar
+        , ppOutput  = hPutStrLn h
         }
     }
     `additionalKeysP`
@@ -63,7 +65,7 @@ main = do
 
     , ("<Print>", spawn "flameshot gui")
 
-    , ("M-p", spawn "dmenu_run -b -fn ' Office Code Pro-9' -l 12 -sb '#9900EF' -sf '#FFF' -nb '#000' -nf '#FFF'")
+    , ("M-p", spawn "dmenu_run -b -fn 'Office Code Pro-9' -l 12 -sb '#9900EF' -sf '#FFF' -nb '#000' -nf '#FFF'")
 
     -- CycleWS
     , ("M-.", nextWS)
