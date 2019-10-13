@@ -50,7 +50,8 @@ exec stack ghc -- \
 * Install font ```Office Code Pro``` or replace font in configs and install your
 * Install libraries, for wallpaper support: ```sudo apt install libcurl4-openssl-dev libx11-dev libxt-dev libimlib2-dev libxinerama-dev libjpeg-progs feh```
 * Transparency support: ```sudo apt install compton``` or ```xcompmgr``` and update: ```xmonad-run.sh``` accordingly
-* Install ```fish``` for shell: ```sudo apt install fish``` or [fish](https://fishshell.com)
+* Install ```urxvt``` terminal for ```fish``` shell: ```sudo apt install rxvt-unicode```
+* Install ```fish```: ```sudo apt install fish``` or [fish](https://fishshell.com)
 * Screenshot utility: ```sudo apt install flameshot```
 * If ```xrdb``` utility is not installed, try install X-server utils: ```sudo apt install x11-xserver-utils```
 * For volume control, the ```amixer``` and ```pactl``` apps maybe preinstalled, if doesn’t: ```sudo apt install pulseaudio-utils pavucontrol```

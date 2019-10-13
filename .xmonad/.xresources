@@ -7,3 +7,8 @@ Xft.hintstyle: hintslight
 Xcursor.size:  22
 Xcursor.theme: DMZ-Black
 
+URxvt.depth: 32
+URxvt.background: [50]#000000
+URxvt.scrollBar: false
+URxvt.font: xft:Office Code Pro:antialias=true:size=9
+
