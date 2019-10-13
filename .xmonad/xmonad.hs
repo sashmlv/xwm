@@ -11,7 +11,7 @@ import XMonad.Hooks.DynamicLog
 main = do
 
   -- xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
-  h <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
+  xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
 
   -- keyboard layout switcher
   -- spawn "setxkbmap -layout us,ru -option ''"
@@ -50,7 +50,7 @@ main = do
         ppTitle     = \x -> ""
         , ppCurrent = wrap "<fn=2>" "</fn>" . xmobarColor "white" "black"
         , ppLayout  = const "" -- to disable the layout info on xmobar
-        , ppOutput  = hPutStrLn h
+        , ppOutput  = hPutStrLn xmproc
         }
     }
     `additionalKeysP`
