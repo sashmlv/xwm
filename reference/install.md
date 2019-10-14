@@ -47,7 +47,7 @@ exec stack ghc -- \
 * Make file executable: ```sudo chmod a+x build```
 * Copy config: ```cp -R xwm-config/.xmonad ~/```
 * Make file executable: ```sudo chmod +x ~/.xmonad/xmonad-run.sh```
-* Install font ```Office Code Pro``` or replace font in configs and install your
+* Overview files and install fonts from it, or replace by your
 * Install libraries, for wallpaper support: ```sudo apt install libcurl4-openssl-dev libx11-dev libxt-dev libimlib2-dev libxinerama-dev libjpeg-progs feh```
 * Transparency support: ```sudo apt install compton``` or ```xcompmgr``` and update: ```xmonad-run.sh``` accordingly
 * Install ```urxvt``` terminal for ```fish``` shell: ```sudo apt install rxvt-unicode```
