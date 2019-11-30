@@ -1,17 +1,10 @@
-Xft.dpi:       96
-Xft.antialias: true
-Xft.rgba:      rgb
-Xft.hinting:   true
-Xft.hintstyle: hintslight
-Xcursor.size:  22
-Xcursor.theme: DMZ-Black
+Xft.dpi: 96
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.rgba: rgb
 
-URxvt.depth: 32
-URxvt.background: [65]#000000
-URxvt.foreground: #00FF00
-URxvt.scrollBar: false
-URxvt.font: xft:Menlo:size=8
-URxvt.letterSpace: -1
-! DejaVu Sans Mono,Source Code Pro,M+ 1m,Andale Mono,Menlo,Hack
-URxvt.perl-ext:
-URxvt.perl-ext-common:
+Xcursor.size: 22
+Xcursor.theme: DMZ-Black
