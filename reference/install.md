@@ -54,7 +54,7 @@ exec stack ghc -- \
 * If ```xrdb``` utility is not installed, try install X-server utils: ```sudo apt install x11-xserver-utils```
 * For volume control, the ```amixer``` and ```pactl``` apps maybe preinstalled, if doesn’t: ```sudo apt install pulseaudio-utils pavucontrol```
 * Dmenu: ```sudo apt install suckless-tools```
-* Check "terminal" value in ```xmonad.hs``` and set your (for "alacritty" edit and copy ```alacritty.yml``` into ```~/.config/alacritty/```)
+* Check "terminal" value in ```xmonad.hs``` and set your (for [alacritty](https://github.com/jwilm/alacritty) edit and copy ```alacritty.yml``` into ```~/.config/alacritty/```)
 * We want choose xmonad at login page (note the user name at path below): ```sudo nano /usr/share/xsessions/xmonad.desktop```
 ```
 [Desktop Entry]
