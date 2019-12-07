@@ -10,7 +10,7 @@
 * ```Mod + period``` - deincrement the number of windows in the master area;
 * ```Mod + H``` - shrink the master area;
 * ```Mod + L``` - expand the master area;
-* ```Mod + P``` - launch dmenu;
+* ```Mod + P``` - launch rofi;
 * ```Mod + Shift + P``` - launch gmrun;
 * ```Mod + Tab or Mod + J``` - move focus to the next window;
 * ```Mod + K``` - move focus to the previous window;

@@ -66,7 +66,7 @@ main = do
 
     , ("<Print>", spawn "flameshot gui")
 
-    , ("M-p", spawn "dmenu_run -b -fn 'Office Code Pro-9' -l 12 -sb '#AAA' -sf '#000' -nb '#000' -nf '#FFF'")
+    , ("M-p", spawn "rofi -show run")
 
     -- CycleWS
     , ("M-.", nextWS)
