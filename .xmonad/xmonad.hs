@@ -42,7 +42,7 @@ main = do
     , manageHook         = composeAll [
         manageDocks
         , isFullscreen --> doFullFloat
-          -- className =? "vlc" --> doFloat,
+        -- , className =? "vlc" --> doFloat
         , manageHook defaultConfig
         ]
     , layoutHook         = avoidStruts $ layoutHook defaultConfig -- fix xmobar overlap

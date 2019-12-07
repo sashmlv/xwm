@@ -77,15 +77,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Faux Scrolling
-  #
-  # The `faux_multiplier` setting controls the number of lines the terminal
-  # should scroll when the alternate screen buffer is active. This is used
-  # to allow mouse scrolling for applications like `man`.
-  #
-  # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
-
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
 
@@ -278,8 +269,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.6
-
+background_opacity: 0.5
 # Mouse bindings
 #
 # Available fields:
@@ -641,31 +631,6 @@ key_bindings:
   - { key: NumpadEnter,             chars: "\n"                              }
 
 schemes:
-  argonaut:
-    primary:
-      background: '0x292C3E'
-      foreground: '0xEBEBEB'
-    cursor:
-     text: '0xFF261E'
-     cursor: '0xFF261E'
-    normal:
-      black:   '0x0d0d0d'
-      red:     '0xFF301B'
-      green:   '0xA0E521'
-      yellow:  '0xFFC620'
-      blue:    '0x1BA6FA'
-      magenta: '0x8763B8'
-      cyan:    '0x21DEEF'
-      white:   '0xEBEBEB'
-    bright:
-      black:   '0x6D7070'
-      red:     '0xFF4352'
-      green:   '0xB8E466'
-      yellow:  '0xFFD750'
-      blue:    '0x1BA6FA'
-      magenta: '0xA578EA'
-      cyan:    '0x73FBF1'
-      white:   '0xFEFEF8'
   campbell:
     primary:
       background: '0x0c0c0c'
@@ -688,34 +653,6 @@ schemes:
       magenta:    '0xb4009e'
       cyan:       '0x61d6d6'
       white:      '0xf2f2f2'
-  cobalt_2:
-    cursor:
-      text: '0xfefff2'
-      cursor: '0xf0cc09'
-    selection:
-      text: '0xb5b5b5'
-      background: '0x18354f'
-    primary:
-      background: '0x132738'
-      foreground: '0xffffff'
-    normal:
-      black:   '0x000000'
-      red:     '0xff0000'
-      green:   '0x38de21'
-      yellow:  '0xffe50a'
-      blue:    '0x1460d2'
-      magenta: '0xff005d'
-      cyan:    '0x00bbbb'
-      white:   '0xbbbbbb'
-    bright:
-      black:   '0x555555'
-      red:     '0xf40e17'
-      green:   '0x3bd01d'
-      yellow:  '0xedc809'
-      blue:    '0x5555ff'
-      magenta: '0xff55ff'
-      cyan:    '0x6ae3fa'
-      white:   '0xffffff'
   dracula:
     primary:
       background: '0x282a36'
@@ -763,7 +700,7 @@ schemes:
       magenta: '0xcc00ff'
       cyan:    '0x00ffff'
       white:   '0xFFFFFF'
-  kitty: &current
+  kitty:
     primary:
       background: '0x000000'
       foreground: '0xdddddd'
@@ -785,50 +722,6 @@ schemes:
       magenta: '0xfd28ff'
       cyan:    '0x14ffff'
       white:   '0xffffff'
-  molokai_dark:
-    primary:
-      background: '0x1B1D1E'
-      foreground: '0xF8F8F2'
-    normal:
-      black:   '0x333333'
-      red:     '0xC4265E'
-      green:   '0x86B42B'
-      yellow:  '0xB3B42B'
-      blue:    '0x6A7EC8'
-      magenta: '0x8C6BC8'
-      cyan:    '0x56ADBC'
-      white:   '0xE3E3DD'
-    bright:
-      black:   '0x666666'
-      red:     '0xF92672'
-      green:   '0xA6E22E'
-      yellow:  '0xE2E22E'
-      blue:    '0x819AFF'
-      magenta: '0xAE81FF'
-      cyan:    '0x66D9EF'
-      white:   '0xF8F8F2'
-  monokai_dark:
-    primary:
-      background: '0x272822'
-      foreground: '0xF8F8F2'
-    normal:
-      black:   '0x272822'
-      red:     '0xF92672'
-      green:   '0xA6E22E'
-      yellow:  '0xF4BF75'
-      blue:    '0x66D9EF'
-      magenta: '0xAE81FF'
-      cyan:    '0xA1EFE4'
-      white:   '0xF8F8F2'
-    bright:
-      black:   '0x75715E'
-      red:     '0xF92672'
-      green:   '0xA6E22E'
-      yellow:  '0xF4BF75'
-      blue:    '0x66D9EF'
-      magenta: '0xAE81FF'
-      cyan:    '0xA1EFE4'
-      white:   '0xF9F8F5'
   monokai_pro:
     primary:
       background: '0x2D2A2E'
@@ -873,78 +766,6 @@ schemes:
       magenta: '0xf4005f'
       cyan:    '0x58d1eb'
       white:   '0xf6f6ef'
-  new_moon:
-    primary:
-      background: '0x2D2D2D'
-      foreground: '0xB3B9C5'
-    normal:
-      black: '0x2D2D2D'
-      red: '0xF2777A'
-      green: '0x92D192'
-      yellow: '0xFFD479'
-      blue: '0x6AB0F3'
-      magenta: '0xE1A6F2'
-      cyan: '0x76D4D6'
-      white: '0xB3B9C5'
-    bright:
-      black: '0x777C85'
-      red: '0xF2777A'
-      green: '0x76D4D6'
-      yellow: '0xFFEEA6'
-      blue: '0x6AB0F3'
-      magenta: '0xE1A6F2'
-      cyan: '0x76D4D6'
-      white: '0xFFFFFF'
-  oceanic_next:
-    primary:
-      background: '0x1b2b34'
-      foreground: '0xd8dee9'
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: '0x1b2b34'
-      cursor: '0xffffff'
-    normal:
-      black:   '0x343d46'
-      red:     '0xEC5f67'
-      green:   '0x99C794'
-      yellow:  '0xFAC863'
-      blue:    '0x6699cc'
-      magenta: '0xc594c5'
-      cyan:    '0x5fb3b3'
-      white:   '0xd8dee9'
-    bright:
-      black:   '0x343d46'
-      red:     '0xEC5f67'
-      green:   '0x99C794'
-      yellow:  '0xFAC863'
-      blue:    '0x6699cc'
-      magenta: '0xc594c5'
-      cyan:    '0x5fb3b3'
-      white:   '0xd8dee9'
-  one_dark:
-    primary:
-      background: '0x282c34'
-      foreground: '0xabb2bf'
-    normal:
-      # NOTE: Use '0x131613' for the `black` color if you'd like to see
-      # black text on the background.
-      black:   '0x282c34'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0xabb2bf'
-    bright:
-      black:   '0x5c6370'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0xffffff'
   pencil_dark:
     primary:
       background: '0x212121'
@@ -967,29 +788,7 @@ schemes:
       magenta: '0x6855de'
       cyan:    '0x4fb8cc'
       white:   '0xf1f1f1'
-  seoul256: # !!!
-    primary:
-      background: '0x3a3a3a'
-      foreground: '0xd0d0d0'
-    normal:
-      black:   '0x4e4e4e'
-      red:     '0xd68787'
-      green:   '0x5f865f'
-      yellow:  '0xd8af5f'
-      blue:    '0x85add4'
-      magenta: '0xd7afaf'
-      cyan:    '0x87afaf'
-      white:   '0xd0d0d0'
-    bright:
-      black:   '0x626262'
-      red:     '0xd75f87'
-      green:   '0x87af87'
-      yellow:  '0xffd787'
-      blue:    '0xadd4fb'
-      magenta: '0xffafaf'
-      cyan:    '0x87d7d7'
-      white:   '0xe4e4e4'
-  snazzy: # !!!
+  snazzy:
     primary:
       background: '0x282a36'
       foreground: '0xeff0eb'
@@ -1011,106 +810,6 @@ schemes:
       magenta: '0xff6ac1'
       cyan:    '0x9aedfe'
       white:   '0xf1f1f0'
-  solarized_light:
-    primary:
-      background: '0xfdf6e3' # base3
-      foreground: '0x657b83' # base00
-    cursor:
-      text:   '0xfdf6e3' # base3
-      cursor: '0x657b83' # base00
-    normal:
-      black:   '0x073642' # base02
-      red:     '0xdc322f' # red
-      green:   '0x859900' # green
-      yellow:  '0xb58900' # yellow
-      blue:    '0x268bd2' # blue
-      magenta: '0xd33682' # magenta
-      cyan:    '0x2aa198' # cyan
-      white:   '0xeee8d5' # base2
-    bright:
-      black:   '0x002b36' # base03
-      red:     '0xcb4b16' # orange
-      green:   '0x586e75' # base01
-      yellow:  '0x657b83' # base00
-      blue:    '0x839496' # base0
-      magenta: '0x6c71c4' # violet
-      cyan:    '0x93a1a1' # base1
-      white:   '0xfdf6e3' # base3
-  solarized_dark:
-    primary:
-      background: '0x002b36' # base03
-      foreground: '0x839496' # base0
-    cursor:
-      text:   '0x002b36' # base03
-      cursor: '0x839496' # base0
-    normal:
-      black:   '0x073642' # base02
-      red:     '0xdc322f' # red
-      green:   '0x859900' # green
-      yellow:  '0xb58900' # yellow
-      blue:    '0x268bd2' # blue
-      magenta: '0xd33682' # magenta
-      cyan:    '0x2aa198' # cyan
-      white:   '0xeee8d5' # base2
-    bright:
-      black:   '0x002b36' # base03
-      red:     '0xcb4b16' # orange
-      green:   '0x586e75' # base01
-      yellow:  '0x657b83' # base00
-      blue:    '0x839496' # base0
-      magenta: '0x6c71c4' # violet
-      cyan:    '0x93a1a1' # base1
-      white:   '0xfdf6e3' # base3
-  scorcerer:
-    primary:
-      background: '0x222222'
-      foreground: '0xc2c2b0'
-    cursor:
-      text:   '0xc2c2b0'
-      cursor: '0xc2c2b0'
-    normal:
-      black:   '0x111111'
-      red:     '0xaa4450'
-      green:   '0x719611'
-      yellow:  '0xcc8800'
-      blue:    '0x6688aa'
-      magenta: '0x8f6f8f'
-      cyan:    '0x528b8b'
-      white:   '0xd3d3d3'
-    bright:
-      black:   '0x181818'
-      red:     '0xff6a6a'
-      green:   '0xb1d631'
-      yellow:  '0xff9800'
-      blue:    '0x90b0d1'
-      magenta: '0x8181a6'
-      cyan:    '0x87ceeb'
-      white:   '0xc1cdc1'
-  taerminal:
-    primary:
-      background: '0x26282a'
-      foreground: '0xf0f0f0'
-    cursor:
-      background: '0xf0f0f0'
-      foreground: '0x26282a'
-    normal:
-      black:   '0x26282a'
-      red:     '0xff8878'
-      green:   '0xb4fb73'
-      yellow:  '0xfffcb7'
-      blue:    '0x8bbce5'
-      magenta: '0xffb2fe'
-      cyan:    '0xa2e1f8'
-      white:   '0xf1f1f1'
-    bright:
-      black:   '0x6f6f6f'
-      red:     '0xfe978b'
-      green:   '0xd6fcba'
-      yellow:  '0xfffed5'
-      blue:    '0xc2e3ff'
-      magenta: '0xffc6ff'
-      cyan:    '0xc0e9f8'
-      white:   '0xffffff'
   tango:
     primary:
       background: '0x000000'
@@ -1133,50 +832,6 @@ schemes:
       magenta: '0xad7fa8'
       cyan:    '0x34e2e2'
       white:   '0xeeeeec'
-  tangoish:
-    primary:
-      background: '0x2e3436'
-      foreground: '0xeeeeec'
-    normal:
-       black:   '0x2e3436'
-       red:     '0xcc0000'
-       green:   '0x73d216'
-       yellow:  '0xedd400'
-       blue:    '0x3465a4'
-       magenta: '0x75507b'
-       cyan:    '0xf57900'
-       white:   '0xd3d7cf'
-    bright:
-       black:   '0x2e3436'
-       red:     '0xef2929'
-       green:   '0x8ae234'
-       yellow:  '0xfce94f'
-       blue:    '0x729fcf'
-       magenta: '0xad7fa8'
-       cyan:    '0xfcaf3e'
-       white:   '0xeeeeec'
-  tender:
-    primary:
-      background: '0x282828'
-      foreground: '0xeeeeee'
-    normal:
-      black:   '0x282828'
-      red:     '0xf43753'
-      green:   '0xc9d05c'
-      yellow:  '0xffc24b'
-      blue:    '0xb3deef'
-      magenta: '0xd3b987'
-      cyan:    '0x73cef4'
-      white:   '0xeeeeee'
-    bright:
-      black:   '0x4c4c4c'
-      red:     '0xf43753'
-      green:   '0xc9d05c'
-      yellow:  '0xffc24b'
-      blue:    '0xb3deef'
-      magenta: '0xd3b987'
-      cyan:    '0x73cef4'
-      white:   '0xfeffff'
   terminal_app:
     primary:
       background: '0x000000'
@@ -1199,98 +854,7 @@ schemes:
       magenta: '0xe500e5'
       cyan:    '0x00e5e5'
       white:   '0xe5e5e5'
-  terminal_app_basic:
-    primary:
-      background: "0xFFFFFF"
-      foreground: "0x000000"
-    normal:
-      black:      "0x000000"
-      red:        "0x990000"
-      green:      "0x00A600"
-      yellow:     "0x999900"
-      blue:       "0x0000B2"
-      magenta:    "0xB200B2"
-      cyan:       "0x00A6B2"
-      white:      "0xBFBFBF"
-    bright:
-      black:      "0x666666"
-      red:        "0xE50000"
-      green:      "0x00D900"
-      yellow:     "0xE5E500"
-      blue:       "0x0000FF"
-      magenta:    "0xE500E5"
-      cyan:       "0x00E5E5"
-      white:      "0xE5E5E5"
-  tomorrow_night:
-    primary:
-      background: '0x1d1f21'
-      foreground: '0xc5c8c6'
-    cursor:
-      text: '0x1d1f21'
-      cursor: '0xffffff'
-    normal:
-      black:   '0x1d1f21'
-      red:     '0xcc6666'
-      green:   '0xb5bd68'
-      yellow:  '0xe6c547'
-      blue:    '0x81a2be'
-      magenta: '0xb294bb'
-      cyan:    '0x70c0ba'
-      white:   '0x373b41'
-    bright:
-      black:   '0x666666'
-      red:     '0xff3334'
-      green:   '0x9ec400'
-      yellow:  '0xf0c674'
-      blue:    '0x81a2be'
-      magenta: '0xb77ee0'
-      cyan:    '0x54ced6'
-      white:   '0x282a2e'
-  tomorrow_night_bright:
-    primary:
-      background: '0x000000'
-      foreground: '0xeaeaea'
-    normal:
-      black:   '0x000000'
-      red:     '0xd54e53'
-      green:   '0xb9ca4a'
-      yellow:  '0xe6c547'
-      blue:    '0x7aa6da'
-      magenta: '0xc397d8'
-      cyan:    '0x70c0ba'
-      white:   '0x424242'
-    bright:
-      black:   '0x666666'
-      red:     '0xff3334'
-      green:   '0x9ec400'
-      yellow:  '0xe7c547'
-      blue:    '0x7aa6da'
-      magenta: '0xb77ee0'
-      cyan:    '0x54ced6'
-      white:   '0x2a2a2a'
-  wombat:
-    primary:
-      background: '0x1f1f1f'
-      foreground: '0xe5e1d8'
-    normal:
-      black:   '0x000000'
-      red:     '0xf7786d'
-      green:   '0xbde97c'
-      yellow:  '0xefdfac'
-      blue:    '0x6ebaf8'
-      magenta: '0xef88ff'
-      cyan:    '0x90fdf8'
-      white:   '0xe5e1d8'
-    bright:
-      black:   '0xb4b4b4'
-      red:     '0xf99f92'
-      green:   '0xe3f7a1'
-      yellow:  '0xf2e9bf'
-      blue:    '0xb3d2ff'
-      magenta: '0xe5bdff'
-      cyan:    '0xc2fefa'
-      white:   '0xffffff'
-  xterm:
+  xterm: &current
     primary:
       background: '0x000000'
       foreground: '0xffffff'

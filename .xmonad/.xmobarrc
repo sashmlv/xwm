@@ -31,8 +31,8 @@ Config {
        , sepChar  = "_"
        , alignSep = "}{"
        , template = "}<fn=2>_kbd_</fn> \
-                    \<fc=#BFBFBF>_StdinReader_</fc>   \
-                    \<fn=3>_time_</fn>   \
+                    \<fc=#BFBFBF>_StdinReader_</fc>\
+                    \<fn=3>   _time_   </fn>\
                     \_date_ \
                     \<fn=2>_default:Master_</fn>\
                     \{<fc=#9F9F9F>Cpu:</fc> _cpu_<fc=#9F9F9F>%</fc> \
