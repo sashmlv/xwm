@@ -56,14 +56,13 @@ main = do
     `additionalKeysP`
     [
       ("M-b", sendMessage ToggleStruts)
-    , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -2%")
-    , ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
     , ("M-<Backspace>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    , ("M--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -2%")
-    , ("M-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
+    , ("M-S--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
+    , ("M-S-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
+    , ("M--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
+    , ("M-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%")
     , ("<Print>", spawn "flameshot gui")
-    , ("M-p", spawn "rofi -theme-str '#prompt{enabled:false;}#textbox-prompt-colon{str:\" \";margin:0 0 0 0;}' -display-drun '' -display-run '' -theme Monokai -modi combi -show combi -combi-modi run,drun")
+    , ("M-p", spawn "rofi -display-drun '' -display-run '' -theme Arc-Dark -modi combi -show combi -combi-modi run,drun -theme-str '#inputbar{children:[prompt,textbox-prompt-colon,entry,case-indicator];}#prompt{enabled:false;}#textbox-prompt-colon{text-color:inherit;expand:false;margin:0 0 0 0;str:\" \";}'")
     -- CycleWS
     , ("M-.", nextWS)
     , ("M-,", prevWS)
