@@ -631,6 +631,53 @@ key_bindings:
   - { key: NumpadEnter,             chars: "\n"                              }
 
 schemes:
+  tlh:
+    primary:
+      background: '0x101010'
+      foreground: '0x66ff66'
+    normal:
+      black:   '0x1c1c1c'
+      red:     '0xd81860'
+      green:   '0x60ff60'
+      yellow:  '0xf9fd75'
+      blue:    '0x4695c8'
+      magenta: '0xa78edb'
+      cyan:    '0x43afce'
+      white:   '0xf3ebe2'
+    bright:
+      black:   '0x4d4d4d'
+      red:     '0xf00060'
+      green:   '0x70ff70'
+      yellow:  '0xf9fd80'
+      blue:    '0x5a9dc8'
+      magenta: '0xb29fdb'
+      cyan:    '0x69b8ce'
+      white:   '0xeeeeee'
+  hyper:
+    primary:
+      background: '0x000000'
+      foreground: '0xffffff'
+    cursor:
+      text: '0xF81CE5'
+      cursor: '0xffffff'
+    normal:
+      black:   '0x000000'
+      red:     '0xfe0100'
+      green:   '0x33ff00'
+      yellow:  '0xfeff00'
+      blue:    '0x0066ff'
+      magenta: '0xcc00ff'
+      cyan:    '0x00ffff'
+      white:   '0xd0d0d0'
+    bright:
+      black:   '0x808080'
+      red:     '0xfe0100'
+      green:   '0x33ff00'
+      yellow:  '0xfeff00'
+      blue:    '0x0066ff'
+      magenta: '0xcc00ff'
+      cyan:    '0x00ffff'
+      white:   '0xFFFFFF'
   campbell:
     primary:
       background: '0x0c0c0c'
