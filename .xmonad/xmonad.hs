@@ -14,8 +14,8 @@ main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
 
   -- keyboard layout switcher
-  -- spawn "setxkbmap -layout us,ru -option ''"
-  spawn "setxkbmap -layout us,ru -option 'grp:lctrl_lwin_toggle,grp_led:scroll,ctrl:nocaps'" -- lctrl_lwin_toggle, alt_space_toggle, win_space_toggle
+  -- spawn "setxkbmap -option ''"
+  spawn "setxkbmap -option 'ctrl:nocaps'"
 
   -- transparency
   spawn "compton -b"
@@ -43,6 +43,7 @@ main = do
         manageDocks
         , isFullscreen --> doFullFloat
         -- , className =? "vlc" --> doFloat
+        , className =? "Rrpm" --> doFloat
         , manageHook defaultConfig
         ]
     , layoutHook         = avoidStruts $ layoutHook defaultConfig -- fix xmobar overlap
@@ -67,4 +68,10 @@ main = do
     , ("M-.", nextWS)
     , ("M-,", prevWS)
     , ("M-/", toggleWS)
+    ]
+    `additionalKeys`
+    [
+      -- keyboard layout switcher
+      ((mod4Mask, xK_Shift_L), spawn "setxkbmap -layout us")
+    , ((mod4Mask, xK_Alt_L), spawn "setxkbmap -layout ru")
     ]
