@@ -13,7 +13,7 @@ main = do
   -- xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
   xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
 
-  -- keyboard layout switcher
+  -- no Caps-Lock
   -- spawn "setxkbmap -option ''"
   spawn "setxkbmap -option 'ctrl:nocaps'"
 
@@ -43,7 +43,7 @@ main = do
         manageDocks
         , isFullscreen --> doFullFloat
         -- , className =? "vlc" --> doFloat
-        , className =? "Rrpm" --> doFloat
+        -- , className =? "Rrpm" --> doFloat
         , manageHook defaultConfig
         ]
     , layoutHook         = avoidStruts $ layoutHook defaultConfig -- fix xmobar overlap
