@@ -27,11 +27,6 @@ main = do
   -- xresources
   spawn "xrdb -merge -I$HOME ~/.xmonad/.xresources"
 
-  -- mount disks
-  -- use this command for disk search: lsblk -f
-  spawn "udisksctl mount -b /dev/sdb1"
-  spawn "udisksctl mount -b /dev/sdc1"
-
   xmonad $ docks $ defaultConfig {
     modMask              = mod4Mask         -- set 'Mod' to windows key
     -- , terminal           = "gnome-terminal" -- for Mod + Shift + Enter
