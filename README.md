@@ -1,3 +1,3 @@
 ## Xmonad config.
 
-### Information in reference.
+### Information in docs.
