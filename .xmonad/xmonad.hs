@@ -10,11 +10,11 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Layout.Grid
 import XMonad.Layout.MultiColumns
 
-myLayouts = avoidStruts (layoutFull ||| layoutMirror ||| layoutTall ||| layoutGrid ||| layoutMultiCol) -- avoidStruts fixes xmobar overlap
+myLayouts = avoidStruts (layoutFull ||| layoutTall ||| layoutMirror ||| layoutGrid ||| layoutMultiCol) -- avoidStruts fixes xmobar overlap
   where
     layoutFull = Full
-    layoutMirror = Mirror (Tall 1 (3/100) (3/5))
     layoutTall = Tall 1 (3/100) (1/2)
+    layoutMirror = Mirror (Tall 1 (3/100) (1/2))
     layoutGrid = Grid
     layoutMultiCol = multiCol [1] 1 0.01 (-0.5)
 
