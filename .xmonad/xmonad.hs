@@ -7,6 +7,16 @@ import XMonad.Util.EZConfig
 import Graphics.X11.ExtraTypes.XF86
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.DynamicLog
+import XMonad.Layout.Grid
+import XMonad.Layout.MultiColumns
+
+myLayouts = avoidStruts (layoutFull ||| layoutMirror ||| layoutTall ||| layoutGrid ||| layoutMultiCol) -- avoidStruts fixes xmobar overlap
+  where
+    layoutFull = Full
+    layoutMirror = Mirror (Tall 1 (3/100) (3/5))
+    layoutTall = Tall 1 (3/100) (1/2)
+    layoutGrid = Grid
+    layoutMultiCol = multiCol [1] 1 0.01 (-0.5)
 
 main = do
 
@@ -41,7 +51,7 @@ main = do
         -- , className =? "Rrpm" --> doFloat
         , manageHook defaultConfig
         ]
-    , layoutHook         = avoidStruts $ layoutHook defaultConfig -- fix xmobar overlap
+    , layoutHook         = myLayouts
     , logHook = dynamicLogWithPP $ xmobarPP {
         ppTitle     = \x -> ""
         , ppCurrent = wrap "<fn=2>" "</fn>" . xmobarColor "white" "black"
