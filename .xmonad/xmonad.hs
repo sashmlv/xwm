@@ -79,4 +79,6 @@ main = do
       -- keyboard layout switcher
       ((mod4Mask, xK_Shift_L), spawn "setxkbmap -layout us")
     , ((mod4Mask, xK_Alt_L), spawn "setxkbmap -layout ru")
+      -- poweroff
+    , ((0, 0x1008FF2A), spawn "systemctl poweroff")
     ]
