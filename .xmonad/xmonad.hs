@@ -73,6 +73,13 @@ main = do
     , ("M-.", nextWS)
     , ("M-,", prevWS)
     , ("M-/", toggleWS)
+    -- brightness
+    , ("<XF86MonBrightnessUp>", spawn "ddcutil --nousb setvcp 10 + 5")
+    , ("<XF86MonBrightnessDown>", spawn "ddcutil --nousb setvcp 10 - 5")
+    , ("M-S-[", spawn "ddcutil --nousb setvcp 10 - 1")
+    , ("M-S-]", spawn "ddcutil --nousb setvcp 10 + 1")
+    , ("M-[", spawn "ddcutil --nousb setvcp 10 - 5")
+    , ("M-]", spawn "ddcutil --nousb setvcp 10 + 5")
     ]
     `additionalKeys`
     [
