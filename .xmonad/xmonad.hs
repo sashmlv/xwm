@@ -37,6 +37,9 @@ main = do
   -- xresources
   spawn "xrdb -merge -I$HOME ~/.xmonad/.xresources"
 
+  -- mic fifo
+  spawn "bash ~/.xmonad/bin/mic.sh init"
+
   xmonad $ docks $ defaultConfig {
     modMask              = mod4Mask         -- set 'Mod' to windows key
     -- , terminal           = "gnome-terminal" -- for Mod + Shift + Enter
@@ -80,6 +83,8 @@ main = do
     , ("M-S-]", spawn "ddcutil --nousb setvcp 10 + 1")
     , ("M-[", spawn "ddcutil --nousb setvcp 10 - 5")
     , ("M-]", spawn "ddcutil --nousb setvcp 10 + 5")
+    -- microphone toggle
+    , (("M-S-<Backspace>"), spawn "bash ~/.xmonad/bin/mic.sh toggle")
     ]
     `additionalKeys`
     [

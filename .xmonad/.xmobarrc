@@ -25,7 +25,8 @@ Config {
                     , Run Date "%H:%M:%S" "time" 10
                     , Run Date "%d.%m.%y %a" "date" 10
                     , Run Kbd [("ru", "<fc=#FF00FF>RU</fc>"), ("us", "<fc=#00CCFF>EN</fc>")]
-                    , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=1> • </fn>", "-o", "<fn=1> • </fn>"] 1
+                    , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=1> •</fn>", "-o", "<fn=1> •</fn>"] 1
+                    , Run PipeReader "/tmp/.mic.tmp" "mic"
                     , Run StdinReader
                     ]
        , sepChar  = "_"
@@ -35,6 +36,7 @@ Config {
                     \<fn=3>   _time_   </fn>\
                     \_date_ \
                     \<fn=2>_default:Master_</fn>\
+                    \<fn=1>_mic_</fn> \
                     \{<fc=#9F9F9F>Cpu:</fc> _cpu_<fc=#9F9F9F>%</fc> \
                     \<fc=#9F9F9F>Mem:</fc> _memory_<fc=#9F9F9F>%</fc> \
                     \<fc=#9F9F9F>Swap:</fc> _swap_<fc=#9F9F9F>%</fc> \
