@@ -8,15 +8,17 @@ export PATH=$PATH":/home/$USER/.local/bin"
 * Reboot: ```sudo reboot```
 * Install GHC: ```stack setup```
 * Then:```mkdir ~/.xmonad && cd ~/.xmonad```
-* ```git clone "https://github.com/xmonad/xmonad"```
-* ```git clone "https://github.com/xmonad/xmonad-contrib"```
-* ```git clone "https://github.com/jaor/xmobar"```
+* ```git clone https://github.com/xmonad/xmonad```
+* ```git clone https://github.com/xmonad/xmonad-contrib```
+* ```git clone https://github.com/jaor/xmobar```
 * From inside ```~/.xmonad```: ```stack init```
 * Edit ```stack.yaml```: ```sudo nano stack.yaml```
 ```
 extra-deps:
 - iwlib-0.1.0
 - alsa-mixer-0.3.0
+- netlink-1.1.1.0
+- libmpd-0.9.2.0
 flags:
   xmobar:
     all_extensions: true

@@ -28,7 +28,8 @@ main = do
   spawn "setxkbmap -option 'ctrl:nocaps'"
 
   -- transparency
-  spawn "compton -b"
+  spawn "picom --experimental-backends --config ~/.xmonad/picom.conf &"
+  -- spawn "compton -b"
   -- xcompmgr -n &
 
   -- wallpaper

@@ -15,11 +15,10 @@ elif [ "$1" == 'toggle' ]; then
    result=$(pactl list sources | grep -A 10 $(pactl info | grep "Default Source" | cut -f3 -d" ") | grep "Mute: " | cut -f2 -d" ")
 fi
 
-if [ "$result" == 'yes' ]; then
-
-   echo "<fc=#00FF00>•</fc>" > "$mictmp" &
-
-else
+if [ "$result" == 'yes' ]; then # mute: yes
 
    echo "<fc=#FF0000>•</fc>" > "$mictmp" &
+else
+
+   echo "<fc=#00FF00>•</fc>" > "$mictmp" &
 fi
