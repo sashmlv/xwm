@@ -81,8 +81,8 @@ main = do
     , ("M-,", prevWS)
     , ("M-/", toggleWS)
     -- brightness
-    , ("<XF86MonBrightnessUp>", spawn "bash ~/.xmonad/bin/brightness.sh up 1")
-    , ("<XF86MonBrightnessDown>", spawn "bash ~/.xmonad/bin/brightness.sh down 1")
+    , ("<XF86MonBrightnessUp>", spawn "bash ~/.xmonad/bin/brightness.sh up 5")
+    , ("<XF86MonBrightnessDown>", spawn "bash ~/.xmonad/bin/brightness.sh down 5")
     , ("M-S-[", spawn "bash ~/.xmonad/bin/brightness.sh down 1")
     , ("M-S-]", spawn "bash ~/.xmonad/bin/brightness.sh up 1")
     , ("M-[", spawn "bash ~/.xmonad/bin/brightness.sh down 5")
