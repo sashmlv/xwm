@@ -12,7 +12,8 @@
 * * ```make```
 * * ```sudo make install```
 * add user to ```i2c``` group: ```sudo usermod $USER -aG i2c```
-* relogin
+* giving i2c group RW permission on the /dev/i2c: ```sudo cp $HOME/ddcutil-0.9.9/data/etc/udev/rules.d/45-ddcutil-i2c.rules /etc/udev/rules.d/```
+* reboot
 * get brightness: ```ddcutil --nousb getvcp 10```
 * increase brightness: ```ddcutil --nousb setvcp 10 + 5```
 * decrease brightness: ```ddcutil --nousb setvcp 10 - 5```
