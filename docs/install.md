@@ -51,11 +51,11 @@ exec stack ghc -- \
 * Make file executable: ```sudo chmod +x ~/.xmonad/xmonad-run.sh```
 * Overview files and install fonts from it, or replace by your
 * Install libraries, for wallpaper support: ```sudo apt install libcurl4-openssl-dev libx11-dev libxt-dev libimlib2-dev libxinerama-dev libjpeg-progs feh```
-* Transparency support: ```sudo apt install compton``` or ```xcompmgr``` and update: ```xmonad.hs``` accordingly
+* Transparency support: [picom](https://github.com/sashmlv/xwm-config/blob/master/docs/picom.md)
 * Screenshot utility: ```sudo apt install flameshot```
 * If ```xrdb``` utility is not installed, try install X-server utils: ```sudo apt install x11-xserver-utils```
 * For volume control, the ```amixer``` and ```pactl``` apps maybe preinstalled, if doesn’t: ```sudo apt install pulseaudio-utils pavucontrol```
-* [Rofi](https://github.com/davatorium/rofi): [manual](https://github.com/davatorium/rofi/blob/next/INSTALL.md) (prefer) or ```sudo apt install rofi```
+* Application launcher: [rofi](https://github.com/davatorium/rofi), [manual](https://github.com/davatorium/rofi/blob/next/INSTALL.md) (prefer) or ```sudo apt install rofi```
 * Check ```terminal``` value in ```xmonad.hs``` and set your (for [alacritty](https://github.com/jwilm/alacritty) edit and copy ```alacritty.yml``` into ```~/.config/alacritty/```)
 * Maybe you want [fish](https://github.com/fish-shell/fish-shell)
 * We want choose xmonad at login page (note the user name at path below): ```sudo nano /usr/share/xsessions/xmonad.desktop```
