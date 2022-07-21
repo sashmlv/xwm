@@ -1,12 +1,15 @@
 Config {
          font = "xft:Office Code Pro:antialias=true:size=9"
        , additionalFonts = [
-                            "xft:Sans Serif-15:normal"
+                             "xft:Sans Serif-15:normal"
                            , "xft:Office Code Pro:antialias=true:size=9:bold"
                            , "xft:Office Code Pro:antialias=true:size=10:bold"
                            ]
        , fgColor = "white"
        , alpha = 120
+       -- , border = TopB
+       -- , borderColor = "#FF0000"
+       -- , borderWidth = 1
        , position = BottomSize C 100 30
        , textOffset = -1
        , textOffsets = [ 21, -1 ]

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 mictmp='/tmp/.mic.tmp'
 result=
@@ -17,8 +17,8 @@ fi
 
 if [[ "$result" == 'yes' ]]; then # mute: yes
 
-   echo "<fc=#FF0000>•</fc>" > "$mictmp" &
+   echo "<fc=#FF0000>•</fc>" >| "$mictmp" &
 else
 
-   echo "<fc=#00FF00>•</fc>" > "$mictmp" &
+   echo "<fc=#00FF00>•</fc>" >| "$mictmp" &
 fi
