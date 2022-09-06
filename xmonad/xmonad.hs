@@ -95,9 +95,11 @@ main = do
     [
       -- https://hackage.haskell.org/package/xmonad-0.15/docs/XMonad.html
       -- keyboard layout switcher
-      ((0, xK_Insert), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap ru || setxkbmap us")
-      --   ((mod4Mask, xK_Shift_L), spawn "setxkbmap -layout us")
-      -- , ((mod4Mask, xK_Shift_R), spawn "setxkbmap -layout ru")
+      -- ((shiftMask, xK_Shift_R), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap ru || setxkbmap us")
+      -- , ((shiftMask, xK_Shift_L), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap ru || setxkbmap us")
+      -- ((0, xK_Insert), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap ru || setxkbmap us")
+        ((shiftMask, xK_Shift_L), spawn "setxkbmap -layout us")
+      , ((shiftMask, xK_Shift_R), spawn "setxkbmap -layout ru")
       -- poweroff
     , ((0, 0x1008FF2A), spawn "systemctl poweroff")
     ]

@@ -9,5 +9,6 @@ if ! grep -qs "/run/media/$USER/disk" /proc/mounts; then
 fi
 
 # exec startx $HOME/.cache/xmonad/xmonad-x86_64-linux # ? run from shell cli
+# exec $HOME/.cache/xmonad/xmonad-x86_64-linux # ubuntu
 # dbus-launch --sh-syntax --exit-with-session $HOME/.cache/xmonad/xmonad-x86_64-linux # sddm
 dbus-run-session $HOME/.cache/xmonad/xmonad-x86_64-linux # sddm
