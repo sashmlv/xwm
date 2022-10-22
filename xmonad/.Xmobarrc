@@ -36,12 +36,12 @@ Config {
                     ]
        , sepChar  = "_"
        , alignSep = "}{"
-       , template = "<fc=#9F9F9F>C</fc> _cpu_<fc=#9F9F9F></fc> \
-                    \<fc=#9F9F9F>M</fc> _memory_<fc=#9F9F9F></fc> \
-                    \<fc=#9F9F9F>G</fc> _gpu_<fc=#9F9F9F></fc> \
-                    \<fc=#9F9F9F>S</fc> _swap_<fc=#9F9F9F></fc> \
+       , template = "<fc=#A3A3A3>C</fc> _cpu_<fc=#A3A3A3></fc> \
+                    \<fc=#A3A3A3>M</fc> _memory_<fc=#A3A3A3></fc> \
+                    \<fc=#A3A3A3>G</fc> _gpu_<fc=#A3A3A3></fc> \
+                    \<fc=#A3A3A3>S</fc> _swap_<fc=#A3A3A3></fc> \
                     \}<fn=2>_kbd_</fn> \
-                    \<fc=#BFBFBF>_StdinReader_</fc>\
+                    \<fc=#A3A3A3>_StdinReader_</fc>\
                     \<fn=3>   _time_   </fn>\
                     \_date_ \
                     \<fn=2>_brightness_</fn> \
