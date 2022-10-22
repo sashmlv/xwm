@@ -22,14 +22,14 @@ Config {
        , allDesktops = True
        , overrideRedirect = False
        , commands = [
-                    Run Cpu ["-L","3","-H","50","--normal","green","--high","red","-t","<total>"] 30
-                    , Run Memory ["-t","<usedratio>"] 30
-                    , Run Swap ["-t", "<usedratio>"] 30
+                    Run Cpu ["-L","3","-H","50","--normal","green","--high","red","-t","<total>"] 50
+                    , Run Memory ["-t","<usedratio>"] 50
+                    , Run Swap ["-t", "<usedratio>"] 50
                     , Run Date "%H:%M:%S" "time" 10
                     , Run Date "%d.%m.%y %a" "date" 10
                     , Run Kbd [("ru", "<fc=#FF00FF>RU</fc>"), ("us", "<fc=#00CCFF>EN</fc>")]
                     , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=1> •</fn>", "-o", "<fn=1> •</fn>"] 1
-                    , Run Com "/bin/sh" ["-c","nvidia-smi --format=csv,nounits,noheader --query-gpu=utilization.gpu,temperature.gpu | sed 's|[,]|%|' | sed 's/ *$/°/'"] "gpu" 30
+                    , Run Com "/bin/sh" ["-c","nvidia-smi --format=csv,nounits,noheader --query-gpu=utilization.gpu,temperature.gpu | sed 's|[,]|%|' | sed 's/ *$/°/'"] "gpu" 50
                     , Run PipeReader "/tmp/.mic.tmp" "mic"
                     , Run PipeReader "/tmp/.brightness.tmp" "brightness"
                     , Run StdinReader
