@@ -29,17 +29,17 @@ Config {
                     , Run Date "%d.%m.%y %a" "date" 10
                     , Run Kbd [("ru", "<fc=#FF00FF>RU</fc>"), ("us", "<fc=#00CCFF>EN</fc>")]
                     , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=1> •</fn>", "-o", "<fn=1> •</fn>"] 1
-                    , Run Com "/bin/sh" ["-c","nvidia-smi --format=csv,nounits,noheader --query-gpu=utilization.gpu,temperature.gpu | sed 's|[,]|%|' | sed 's/ *$/°/'"] "gpu" 50
+                    , Run Com "/bin/sh" ["-c","nvidia-smi --format=csv,nounits,noheader --query-gpu=utilization.gpu,temperature.gpu | sed 's|[,]||' | sed 's/ *$/°/'"] "gpu" 50
                     , Run PipeReader "/tmp/.mic.tmp" "mic"
                     , Run PipeReader "/tmp/.brightness.tmp" "brightness"
                     , Run StdinReader
                     ]
        , sepChar  = "_"
        , alignSep = "}{"
-       , template = "<fc=#9F9F9F>C</fc> _cpu_<fc=#9F9F9F>%</fc> \
-                    \<fc=#9F9F9F>M</fc> _memory_<fc=#9F9F9F>%</fc> \
+       , template = "<fc=#9F9F9F>C</fc> _cpu_<fc=#9F9F9F></fc> \
+                    \<fc=#9F9F9F>M</fc> _memory_<fc=#9F9F9F></fc> \
                     \<fc=#9F9F9F>G</fc> _gpu_<fc=#9F9F9F></fc> \
-                    \<fc=#9F9F9F>S</fc> _swap_<fc=#9F9F9F>%</fc> \
+                    \<fc=#9F9F9F>S</fc> _swap_<fc=#9F9F9F></fc> \
                     \}<fn=2>_kbd_</fn> \
                     \<fc=#BFBFBF>_StdinReader_</fc>\
                     \<fn=3>   _time_   </fn>\
