@@ -22,28 +22,30 @@ Config {
        , allDesktops = True
        , overrideRedirect = False
        , commands = [
-                    Run Cpu ["-L","3","-H","50","--normal","green","--high","red","-t","<total>"] 10
-                    , Run Memory ["-t","<usedratio>"] 10
-                    , Run Swap ["-t", "<usedratio>"] 10
+                    Run Cpu ["-L","3","-H","50","--normal","green","--high","red","-t","<total>"] 30
+                    , Run Memory ["-t","<usedratio>"] 30
+                    , Run Swap ["-t", "<usedratio>"] 30
                     , Run Date "%H:%M:%S" "time" 10
                     , Run Date "%d.%m.%y %a" "date" 10
                     , Run Kbd [("ru", "<fc=#FF00FF>RU</fc>"), ("us", "<fc=#00CCFF>EN</fc>")]
                     , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=1> •</fn>", "-o", "<fn=1> •</fn>"] 1
+                    , Run Com "/bin/sh" ["-c","nvidia-smi --format=csv,nounits,noheader --query-gpu=utilization.gpu,temperature.gpu | sed 's|[,]|%|' | sed 's/ *$/°/'"] "gpu" 30
                     , Run PipeReader "/tmp/.mic.tmp" "mic"
                     , Run PipeReader "/tmp/.brightness.tmp" "brightness"
                     , Run StdinReader
                     ]
        , sepChar  = "_"
        , alignSep = "}{"
-       , template = "}<fn=2>_kbd_</fn> \
+       , template = "<fc=#9F9F9F>C</fc> _cpu_<fc=#9F9F9F>%</fc> \
+                    \<fc=#9F9F9F>M</fc> _memory_<fc=#9F9F9F>%</fc> \
+                    \<fc=#9F9F9F>G</fc> _gpu_<fc=#9F9F9F></fc> \
+                    \<fc=#9F9F9F>S</fc> _swap_<fc=#9F9F9F>%</fc> \
+                    \}<fn=2>_kbd_</fn> \
                     \<fc=#BFBFBF>_StdinReader_</fc>\
                     \<fn=3>   _time_   </fn>\
                     \_date_ \
                     \<fn=2>_brightness_</fn> \
                     \<fn=2>_default:Master_</fn>\
                     \<fn=1>_mic_</fn> \
-                    \{<fc=#9F9F9F>Cpu:</fc> _cpu_<fc=#9F9F9F>%</fc> \
-                    \<fc=#9F9F9F>Mem:</fc> _memory_<fc=#9F9F9F>%</fc> \
-                    \<fc=#9F9F9F>Swap:</fc> _swap_<fc=#9F9F9F>%</fc> \
-                    \"
+                    \{"
        }

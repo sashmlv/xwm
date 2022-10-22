@@ -55,22 +55,21 @@ main = do
     `additionalKeysP`
     [
       ("M-b", sendMessage ToggleStruts)
-    , ("M-<Backspace>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    , ("M-S--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
-    , ("M-S-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%")
-    , ("M--", spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
-    , ("M-=", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
-    , ("<Print>", spawn "flameshot gui")
+    , ("M-<Backspace>", spawn "/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    , ("M-S--", spawn "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -1%")
+    , ("M-S-=", spawn "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +1%")
+    , ("M--", spawn "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%")
+    , ("M-=", spawn "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%")
+    , ("<Print>", spawn "/usr/bin/flameshot gui")
     , ("M-p", spawn (
-              "rofi -theme sidebar -font 'Terminus 12' -display-drun '' -display-run ''" ++
-              " -show combi -combi-modi run,drun" ++
-              "rofi -theme sidebar " ++
+              "/usr/bin/rofi -run-command \"/bin/bash -i -c '{cmd}'\" " ++ -- to get env init
+              "-theme sidebar " ++
               "-font 'Terminus 12' " ++
               "-display-drun '' -display-run '' " ++
               "-show combi -combi-modi run,drun " ++
               "-theme-str " ++
               "'" ++
-             "element selected normal {background-color: @green;}" ++ -- from 'sidebar' theme
+              "element selected normal {background-color: @green;}" ++ -- from 'sidebar' theme
               "#inputbar{children:[prompt,textbox-prompt-colon,entry,case-indicator];}" ++
               "#prompt{enabled:false;}" ++
               "#textbox-prompt-colon{text-color:inherit;expand:false;margin:0 0 0 0;str:\" \";}" ++
@@ -82,24 +81,22 @@ main = do
     , ("M-,", prevWS)
     , ("M-/", toggleWS)
     -- brightness
-    , ("<XF86MonBrightnessUp>", spawn "bash $HOME/.config/xmonad/bin/brightness.sh up 5")
-    , ("<XF86MonBrightnessDown>", spawn "bash $HOME/.config/xmonad/bin/brightness.sh down 5")
-    , ("M-S-[", spawn "bash $HOME/.config/xmonad/bin/brightness.sh down 1")
-    , ("M-S-]", spawn "bash $HOME/.config/xmonad/bin/brightness.sh up 1")
-    , ("M-[", spawn "bash $HOME/.config/xmonad/bin/brightness.sh down 5")
-    , ("M-]", spawn "bash $HOME/.config/xmonad/bin/brightness.sh up 5")
+    , ("<XF86MonBrightnessUp>", spawn "/usr/bin/bash $HOME/.xmonad/bin/brightness.sh up 5")
+    , ("<XF86MonBrightnessDown>", spawn "/usr/bin/bash $HOME/.xmonad/bin/brightness.sh down 5")
+    , ("M-S-[", spawn "/usr/bin/bash $HOME/.xmonad/bin/brightness.sh down 1")
+    , ("M-S-]", spawn "/usr/bin/bash $HOME/.xmonad/bin/brightness.sh up 1")
+    , ("M-[", spawn "/usr/bin/bash $HOME/.xmonad/bin/brightness.sh down 5")
+    , ("M-]", spawn "/usr/bin/bash $HOME/.xmonad/bin/brightness.sh up 5")
     -- microphone toggle
-    , (("M-S-<Backspace>"), spawn "bash $HOME/.config/xmonad/bin/mic.sh toggle")
+    , (("M-S-<Backspace>"), spawn "/usr/bin/bash $HOME/.xmonad/bin/mic.sh toggle")
     ]
     `additionalKeys`
     [
       -- https://hackage.haskell.org/package/xmonad-0.15/docs/XMonad.html
       -- keyboard layout switcher
-      -- ((shiftMask, xK_Shift_R), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap ru || setxkbmap us")
-      -- , ((shiftMask, xK_Shift_L), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap ru || setxkbmap us")
       -- ((0, xK_Insert), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap ru || setxkbmap us")
-        ((shiftMask, xK_Shift_L), spawn "setxkbmap -layout us")
-      , ((shiftMask, xK_Shift_R), spawn "setxkbmap -layout ru")
+        ((shiftMask, xK_Shift_L), spawn "/usr/bin/setxkbmap -layout us")
+      , ((shiftMask, xK_Shift_R), spawn "/usr/bin/setxkbmap -layout ru")
       -- poweroff
-    , ((0, 0x1008FF2A), spawn "systemctl poweroff")
+      , ((0, 0x1008FF2A), spawn "/usr/bin/systemctl poweroff")
     ]
