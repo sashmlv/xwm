@@ -8,4 +8,4 @@
 * [fish](https://github.com/fish-shell/fish-shell)
 * [feh](https://github.com/derf/feh)
 * [flameshot](https://github.com/flameshot-org/flameshot)
-* ```amixer``` ```pactl```
+* ```pactl```
