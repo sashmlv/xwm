@@ -4,7 +4,6 @@ import XMonad.Util.Run
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Util.EZConfig
--- import Graphics.X11.ExtraTypes.XF86
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.DynamicLog
 import XMonad.Layout.Grid
@@ -19,16 +18,15 @@ myLayouts = avoidStruts (layoutFull ||| layoutTall ||| layoutMirror ||| layoutGr
     layoutGrid     = spacingRaw True  (Border 1 0 0 1) True (Border 0 1 1 0) True $ Grid
     layoutMultiCol = spacingRaw True  (Border 1 0 0 1) True (Border 0 1 1 0) True $ multiCol [1] 1 0.01 (-0.5)
 
--- myLayoutHook = spacingRaw True (Border 0 0 0 0) True (Border 1 1 1 1) True $ myLayouts
 myLayoutHook = myLayouts
 
 main = do
 
-  xmproc <- spawnPipe "$HOME/.config/xmonad/bin/xmonad-env.sh"
+  xmproc <- spawnPipe "$HOME/.xmonad/bin/xmonad-env.sh"
 
-  spawn "/usr/bin/bash $HOME/.config/xmonad/bin/brightness.sh init"
+  spawn "/usr/bin/bash $HOME/.xmonad/bin/brightness.sh init"
 
-  spawn "/usr/bin/bash $HOME/.config/xmonad/bin/mic.sh init"
+  spawn "/usr/bin/bash $HOME/.xmonad/bin/mic.sh init"
 
   xmonad $ docks $ def {
     modMask              = mod4Mask         -- set 'Mod' to windows key
@@ -69,9 +67,10 @@ main = do
               "-show combi -combi-modi run,drun " ++
               "-theme-str " ++
               "'" ++
-              "element selected normal {background-color: @green;}" ++ -- from 'sidebar' theme
+              "* {text-color: #CFCFCF;} inputbar {background-color: #00000088;}" ++ -- from 'sidebar' theme
+              "mainbox {background-color: #000000AA;} element selected normal {background-color: #33333399;}" ++ -- from 'sidebar' theme
               "#inputbar{children:[prompt,textbox-prompt-colon,entry,case-indicator];}" ++
-              "#prompt{enabled:false;}" ++
+              "#prompt{enabled:false;} #entry{text-color: #CFCFCF;}" ++
               "#textbox-prompt-colon{text-color:inherit;expand:false;margin:0 0 0 0;str:\" \";}" ++
               "'"
               )
@@ -92,11 +91,9 @@ main = do
     ]
     `additionalKeys`
     [
-      -- https://hackage.haskell.org/package/xmonad-0.15/docs/XMonad.html
       -- keyboard layout switcher
-      -- ((0, xK_Insert), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap ru || setxkbmap us")
-        ((shiftMask, xK_Shift_L), spawn "/usr/bin/setxkbmap -layout us")
-      , ((shiftMask, xK_Shift_R), spawn "/usr/bin/setxkbmap -layout ru")
+        ((shiftMask, xK_Shift_R), spawn "/usr/bin/setxkbmap -layout ru")
+      , ((shiftMask, xK_Shift_L), spawn "/usr/bin/setxkbmap -layout us")
       -- poweroff
       , ((0, 0x1008FF2A), spawn "/usr/bin/systemctl poweroff")
     ]

@@ -1,18 +1,18 @@
 Config {
-         font = "xft:Office Code Pro:antialias=true:size=9"
-       , additionalFonts = [
-                             "xft:Sans Serif-15:normal"
-                           , "xft:Office Code Pro:antialias=true:size=9:bold"
-                           , "xft:Office Code Pro:antialias=true:size=10:bold"
-                           ]
+      -- Anka/Coder
+      -- Sometype Mono
+      -- font = "xft:Sometype Mono:antialias=true:autohint=true:size=9"
+      -- "xft:Sometype Mono:antialias=true:hinting=true:autohint=false:hintstyle=hintfull:size=10"
+         font = "Sometype Mono 9"
+       , additionalFonts = ["Sometype Mono 10"]
+       --, textOffsets = [ 18 ]
        , fgColor = "white"
        , alpha = 120
-       -- , border = TopB
-       -- , borderColor = "#FF0000"
-       -- , borderWidth = 1
+       --, border = TopB
+       --, borderColor = "#FF0000"
+       --, borderWidth = 1
        , position = BottomSize C 100 30
        , textOffset = -1
-       , textOffsets = [ 21, -1 ]
        , iconOffset = -1
        , lowerOnStart = False
        , pickBroadest = False
@@ -22,30 +22,37 @@ Config {
        , allDesktops = True
        , overrideRedirect = False
        , commands = [
-                    Run Cpu ["-L","3","-H","50","--normal","green","--high","red","-t","<total>"] 50
+                      Run Cpu ["-L","3","-H","50","--normal","green","--high","red","-t","<total>"] 50
                     , Run Memory ["-t","<usedratio>"] 50
                     , Run Swap ["-t", "<usedratio>"] 50
                     , Run Date "%H:%M:%S" "time" 10
                     , Run Date "%d.%m.%y %a" "date" 10
                     , Run Kbd [("ru", "<fc=#FF00FF>RU</fc>"), ("us", "<fc=#00CCFF>EN</fc>")]
-                    , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fn=1> •</fn>", "-o", "<fn=1> •</fn>"] 1
+                    , Run Volume "default" "Master" ["-t", "<volume><status>", "--", "-O", "<fc=#00FF00> •</fc>", "-o", "<fc=#FF0000> •</fc>"] 1
                     , Run Com "/bin/sh" ["-c","nvidia-smi --format=csv,nounits,noheader --query-gpu=utilization.gpu,temperature.gpu | sed 's|[,]||' | sed 's/ *$/°/'"] "gpu" 50
                     , Run PipeReader "/tmp/.mic.tmp" "mic"
                     , Run PipeReader "/tmp/.brightness.tmp" "brightness"
                     , Run StdinReader
                     ]
-       , sepChar  = "_"
+       , sepChar  = "*"
        , alignSep = "}{"
-       , template = "<fc=#A3A3A3>C</fc> _cpu_<fc=#A3A3A3></fc> \
-                    \<fc=#A3A3A3>M</fc> _memory_<fc=#A3A3A3></fc> \
-                    \<fc=#A3A3A3>G</fc> _gpu_<fc=#A3A3A3></fc> \
-                    \<fc=#A3A3A3>S</fc> _swap_<fc=#A3A3A3></fc> \
-                    \}<fn=2>_kbd_</fn> \
-                    \<fc=#A3A3A3>_StdinReader_</fc>\
-                    \<fn=3>   _time_   </fn>\
-                    \_date_ \
-                    \<fn=2>_brightness_</fn> \
-                    \<fn=2>_default:Master_</fn>\
-                    \<fn=1>_mic_</fn> \
+       -- , template = "<icon=.xmonad/img/cpu.xbm/> *cpu*<fc=#A3A3A3></fc> \
+       --              \<icon=.xmonad/img/mem.xbm/> *memory*<fc=#A3A3A3></fc> \
+       --              \<icon=.xmonad/img/fs_01.xbm/> *gpu*<fc=#A3A3A3></fc> \
+       --              \<icon=.xmonad/img/swap.xbm/> *swap*<fc=#A3A3A3></fc> \
+       -- , template = "<fc=#A3A3A3><icon=.xmonad/img/cpu.xbm/></fc> *cpu*<fc=#A3A3A3></fc> \
+       --              \<fc=#A3A3A3><icon=.xmonad/img/mem.xbm/></fc> *memory*<fc=#A3A3A3></fc> \
+       --              \<fc=#A3A3A3><icon=.xmonad/img/fs_01.xbm/></fc> *gpu*<fc=#A3A3A3></fc> \
+       --              \<fc=#A3A3A3><icon=.xmonad/img/swap.xbm/></fc> *swap*<fc=#A3A3A3></fc> \
+       , template = "<fc=#AFAFAF>cpu</fc> *cpu*<fc=#AFAFAF></fc> \
+                    \<fc=#AFAFAF>mem</fc> *memory*<fc=#AFAFAF></fc> \
+                    \<fc=#AFAFAF>gpu</fc> *gpu*<fc=#AFAFAF></fc> \
+                    \<fc=#AFAFAF>swp</fc> *swap*<fc=#AFAFAF></fc> \
+                    \}*kbd* \
+                    \<fc=#AFAFAF>*StdinReader*</fc>\
+                    \<fn=1>   *time*   </fn>\
+                    \*date* \
+                    \*brightness* \
+                    \*default:Master* \
+                    \*mic*\
                     \{"
-       }

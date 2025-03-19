@@ -1,10 +1,11 @@
-Xft.dpi: 96 ! 100% scaling
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.hinting: 1
+Xft.dpi: 96 ! 123.41 100% scaling, dots per inch
 Xft.antialias: 1
-Xft.rgba: rgb
+Xft.hinting: 1
+Xft.autohint: 0
+Xft.hintstyle: hintslight ! hintnone, hintmedium, hintfull
+Xft.lcdfilter: lcddefault ! lcddefault, lcdlight, lcdlegacy, lcdnone
+Xft.rgba: rgb ! rgb, bgr, vrgb, vbgr, none, unknown
+Xft.embeddedbitmap: 0
 Xcursor.size: 16
-Xcursor.theme: Adwaita
 Xcursor.theme_core: 1
+Xcursor.theme: Adwaita

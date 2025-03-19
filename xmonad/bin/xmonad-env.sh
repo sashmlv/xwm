@@ -34,27 +34,28 @@ if [ -f $usermodmap ]; then
    /usr/bin/xmodmap $usermodmap
 fi
 
-xmonadresources=$HOME/.config/xmonad/.Xresources
+xmonadresources=$HOME/.xmonad/.Xresources
 
 if [ -f $xmonadresources ]; then
    /usr/bin/xrdb -merge $xmonadresources
 fi
 
-xmonadmodmap=$HOME/.config/xmonad/.Xmodmap
+xmonadmodmap=$HOME/.xmonad/.Xmodmap
 
 if [ -f $xmonadmodmap ]; then
    /usr/bin/xmodmap $xmonadmodmap
 fi
 
-xsetroot -cursor_name cross # by default xmonad doesn't set a X cursor
+# xsetroot -cursor_name cross # by default xmonad doesn't set a X cursor
 
-picom -b --experimental-backends --config $HOME/.config/xmonad/picom.conf
+/usr/bin/picom -b --config $HOME/.xmonad/picom.conf
 
 /usr/bin/feh --bg-fill $HOME/Pictures/Wallpapers/Wallpaper.jpg
 
 # for thunar
 # /usr/libexec/polkit-gnome-authentication-agent-1 &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-xmobar $HOME/.config/xmonad/.Xmobarrc
+/usr/bin/xmobar $HOME/.xmonad/.Xmobarrc
 
 # not "&" at end is a must
